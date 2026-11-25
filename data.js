@@ -1,6 +1,6 @@
 /* ===== EDIT ME: placeholder data. Later, swap for fetch() calls to your Express API. ===== */
 /* Express server address: localhost while developing, your deployed server (Render/Railway) once live */
-const API_BASE = ['localhost', '127.0.0.1', ''].includes(location.hostname) ? 'http://localhost:3000' : 'https://deadlck-track.onrender.com/';
+const API_BASE = ['localhost', '127.0.0.1', ''].includes(location.hostname) ? 'http://localhost:3000' : 'https://deadlck-track.onrender.com';
 const NAV = [
   ["Characters","characters.html"],["Items","items.html"],["Builds","builds.html"],["Ranks","ranks.html"]
 ];
