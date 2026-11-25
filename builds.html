@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>Builds · Deadlock Tracker</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&family=Big+Shoulders+Display:wght@700;800&display=swap" rel="stylesheet"/>
+  <link href="style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <aside class="sidebar" id="sidebar"></aside>
+  <script src="data.js"></script>
+  <main>
+   <h1 class="page-title">Builds</h1>
+   <p class="sub">Save item builds for any hero. Keep them private or share them with everyone.</p>
+
+   <div id="need-login" class="panel notice" hidden>
+    <a href="login.html?next=builds.html">Log in</a> or <a href="login.html?mode=register&next=builds.html">register</a> to create and save builds.
+   </div>
+
+   <div id="builds-app" hidden>
+    <div class="builds-bar">
+     <div class="tabs">
+      <button class="tab active" data-list="mine" type="button">My builds</button>
+      <button class="tab" data-list="public" type="button">Public builds</button>
+     </div>
+     <select id="hero-filter" aria-label="Filter by hero"><option value="">All heroes</option></select>
+     <button class="btn" id="new-build" type="button">+ New build</button>
+    </div>
+
+    <!-- editor -->
+    <section class="panel editor" id="editor" hidden>
+     <h2 id="editor-title">New build</h2>
+     <div class="ed-fields">
+      <label>Name <input id="b-name" maxlength="50" placeholder="e.g. Late-game spirit burst"></label>
+      <label>Hero <select id="b-hero"><option value="">Choose a hero…</option></select></label>
+      <label class="check"><input type="checkbox" id="b-public"> Public (everyone can see and copy it)</label>
+     </div>
+     <div class="ed-slots-head"><b>Items</b> <span id="count">0 / 12</span> <small>Click an item below to add it, click a slot to remove it.</small></div>
+     <div class="ed-slots" id="slots"></div>
+     <div class="ed-picker-bar">
+      <div class="tabs" id="cat-tabs">
+       <button class="tab active" data-cat="" type="button">All</button>
+       <button class="tab" data-cat="weapon" type="button">Weapon</button>
+       <button class="tab" data-cat="vitality" type="button">Vitality</button>
+       <button class="tab" data-cat="spirit" type="button">Spirit</button>
+      </div>
+      <input id="item-search" placeholder="Search items…" aria-label="Search items">
+     </div>
+     <div class="picker" id="picker"></div>
+     <p class="form-error" id="b-error" role="alert"></p>
+     <div class="auth-actions">
+      <button class="btn ghost" id="cancel" type="button">Cancel</button>
+      <button class="btn" id="save" type="button">Save build</button>
+     </div>
+    </section>
+
+    <div id="list"></div>
+   </div>
+  </main>
+  <script src="main.js"></script>
+  <script src="itemimg.js"></script>
+  <script src="builds.js"></script>
+ </body>
+</html>

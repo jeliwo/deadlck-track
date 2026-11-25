@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>
+   Player · Deadlock Tracker
+  </title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&family=Big+Shoulders+Display:wght@700;800&display=swap" rel="stylesheet"/>
+  <link href="style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <aside class="sidebar" id="sidebar">
+  </aside>
+  <script src="data.js">
+  </script>
+  <main>
+   <div class="p-head">
+    <div class="ph" id="avatar">
+     avatar
+    </div>
+    <div>
+     <h1 id="pname">
+     </h1>
+     <button class="btn ghost" id="claim">
+     </button>
+    </div>
+   </div>
+   <div class="tabs">
+    <button class="tab active" data-tab="overview">
+     Overview
+    </button>
+    <button class="tab" data-tab="heroes">
+     Heroes
+    </button>
+    <button class="tab" data-tab="matches">
+     Matches
+    </button>
+   </div>
+   <div class="toolbar">
+    <button class="btn" id="compare-btn">
+     Compare with my profile
+    </button>
+    <span class="note" id="compare-note">
+    </span>
+   </div>
+   <div class="cmp" id="cmp-panel">
+   </div>
+   <div data-view="overview">
+    <div class="layout">
+     <div class="panel" id="overview-card">
+     </div>
+     <div>
+      <div class="toolbar">
+       <div class="ph round" id="sum-wr">
+        win%
+       </div>
+       <div>
+        Mean win rate
+        <br/>
+        <small id="sum-kda">
+         KDA 5.3
+        </small>
+       </div>
+       <div class="mini" id="top-heroes">
+       </div>
+       <select aria-label="Mode" class="push" id="mode-filter">
+        <option>
+         All modes
+        </option>
+        <option>
+         Normal
+        </option>
+        <option>
+         Ranked
+        </option>
+        <option>
+         Street Brawl
+        </option>
+       </select>
+       <select aria-label="Hero" id="hero-filter">
+       </select>
+      </div>
+      <h2 class="section-title">
+       Match history
+      </h2>
+      <div id="matches-overview">
+      </div>
+     </div>
+    </div>
+   </div>
+   <div data-view="heroes" hidden="" id="heroes-all">
+   </div>
+   <div data-view="matches" hidden="" id="matches-all">
+   </div>
+  </main>
+  <script src="main.js">
+  </script>
+  <script src="itemimg.js">
+  </script>
+  <script src="player.js">
+  </script>
+ </body>
+</html>

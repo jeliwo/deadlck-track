@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>
+   Home · Deadlock Tracker
+  </title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&family=Big+Shoulders+Display:wght@700;800&display=swap" rel="stylesheet"/>
+  <link href="style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <aside class="sidebar" id="sidebar">
+  </aside>
+  <script src="data.js">
+  </script>
+  <main class="home">
+  <!-- city background image is set in style.css (.home-bg) -->
+  <div class="home-bg"></div>
+  <div class="home-inner">
+   <h1 class="hero-title"><span>Outthink</span><span>Outbuild</span><span>Outrank</span></h1>
+   <form class="search" id="search-form">
+    <input name="q" placeholder="Search for player" aria-label="Search for player">
+    <button>Search</button>
+   </form>
+   <p class="stat-line">Steam data · <b id="games"></b> games tracked</p>
+  </div>
+ </main>
+  <script src="main.js">
+  </script>
+  <script>
+   document.getElementById('games').textContent=SITE.gamesTracked
+  </script>
+ </body>
+</html>

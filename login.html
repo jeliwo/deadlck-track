@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>Log in · Deadlock Tracker</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&family=Big+Shoulders+Display:wght@700;800&display=swap" rel="stylesheet"/>
+  <link href="style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <aside class="sidebar" id="sidebar"></aside>
+  <script src="data.js"></script>
+  <main>
+   <div class="auth-wrap">
+    <h1 id="auth-title">Log in</h1>
+
+    <!-- logged OUT -->
+    <div class="panel auth-card" id="logged-out">
+     <div class="tabs">
+      <button class="tab active" data-mode="login" type="button">Log in</button>
+      <button class="tab" data-mode="register" type="button">Register</button>
+     </div>
+     <form id="auth-form" novalidate>
+      <label data-only="register">Username
+       <input name="username" autocomplete="username" minlength="3" maxlength="20" placeholder="3-20 letters, numbers or _">
+      </label>
+      <label>Email
+       <input name="email" type="email" autocomplete="email" placeholder="you@example.com">
+      </label>
+      <label>Password
+       <input name="password" type="password" autocomplete="current-password" placeholder="At least 8 characters">
+      </label>
+      <p class="form-error" id="auth-error" role="alert"></p>
+      <button class="btn" id="auth-submit">Log in</button>
+     </form>
+    </div>
+
+    <!-- logged IN -->
+    <div class="panel auth-card" id="logged-in" hidden>
+     <div class="rank-row"><span>Username</span><span id="acc-name"></span></div>
+     <div class="rank-row"><span>Email</span><span id="acc-email"></span></div>
+     <div class="rank-row"><span>Claimed profile</span><span id="acc-claim">None yet</span></div>
+     <p class="note" id="acc-hint">Open any player and press “Claim as my profile”. That player becomes the one everyone else is compared to.</p>
+     <div class="auth-actions">
+      <button class="btn ghost" id="unclaim" hidden>Remove claim</button>
+      <button class="btn" id="logout">Log out</button>
+     </div>
+    </div>
+   </div>
+  </main>
+  <script src="main.js"></script>
+  <script src="login.js"></script>
+ </body>
+</html>
